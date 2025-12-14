@@ -63,6 +63,15 @@ CREATE TABLE IF NOT EXISTS fact_diabetes (
     smoking_id INT REFERENCES dim_smoking(smoking_id),
     condition_id INT REFERENCES dim_condition(condition_id)
 );
+
+CREATE TABLE diabetes_predictions (
+    patient_id INT,
+    age INT,
+    bmi FLOAT,
+    blood_pressure FLOAT,
+    glucose_levels FLOAT,
+    predicted_condition TEXT
+);
 """
 
 cur.execute(schema_sql)

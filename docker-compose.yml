@@ -1,38 +1,41 @@
 services:
   db:
     image: postgres:18
-    container_name: postgres
+    container_name: postgres_diabetes
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin123
       POSTGRES_DB: diabetes_db
     ports:
       - "5432:5432"
+    restart: always
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - postgres_diabetes_data:/var/lib/postgresql/
 
   pgadmin:
     image: dpage/pgadmin4
-    container_name: pgadmin
+    container_name: pgadmin_diabetes
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@admin.com
       PGADMIN_DEFAULT_PASSWORD: admin123
     ports:
       - "5050:80"
+    restart: always
     depends_on:
       - db
 
   metabase:
     image: metabase/metabase:latest
-    container_name: metabase
+    container_name: metabase_diabetes
     ports:
       - "3000:3000"
+    restart: always
     volumes:
-      - metabase_data:/metabase-data
+      - metabase_diabetes_data:/metabase-data
     depends_on:
       - db
   etl:
-    build: ./etl
+    build: ./dw_load
     container_name: etl_diabetes
     environment:
       POSTGRES_USER: admin
@@ -45,5 +48,5 @@ services:
       - db
 
 volumes:
-  postgres_data:
-  metabase_data:
+  postgres_diabetes_data:
+  metabase_diabetes_data:

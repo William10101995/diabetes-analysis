@@ -2,7 +2,7 @@
 
 Este documento describe en detalle la **arquitectura Docker** y el **modelo dimensional (esquema estrella)** implementado en el proyecto **Diabetes Analysis**.
 
-El Data Warehouse se construye y se carga automáticamente al ejecutar `docker-compose up`, garantizando reproducibilidad, automatización y consistencia del entorno.
+El Data Warehouse se construye y se carga automáticamente al ejecutar `docker compose up -d`, garantizando reproducibilidad, automatización y consistencia del entorno.
 
 ## 🏗️ Arquitectura General del Proyecto
 
@@ -92,7 +92,7 @@ DIABETES-ANALYSIS/
 Al ejecutar:
 
 ```bash
-docker-compose up
+docker compose up -d
 ```
 
 se produce el siguiente flujo:

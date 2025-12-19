@@ -31,7 +31,7 @@ Este proyecto tiene como objetivo analizar datos relacionados con la diabetes ut
 
 ## Exploración y limpieza de datos desde los notebooks (opcional)
 
-Si deseas explorar y limpiar los datos antes de cargarlos en la base de datos, puedes utilizar los notebooks ubicados en la carpeta `notebooks`.
+Si deseas explorar y limpiar los datos antes de cargarlos en la base de datos, puedes utilizar los notebooks ubicados en la carpeta `etl`.
 
 1. Dentro del repositorio clonado crea un entorno virtual de python y activalo
    ```bash
@@ -47,4 +47,4 @@ Si deseas explorar y limpiar los datos antes de cargarlos en la base de datos, p
    jupyter lab --no-browser
    ```
 4. Abre tu navegador web y navega a `http://localhost:8888`
-5. Abre los notebooks en la carpeta `notebooks` para explorar y limpiar los datos.
+5. Abre los notebooks en la carpeta `etl` para explorar y limpiar los datos.

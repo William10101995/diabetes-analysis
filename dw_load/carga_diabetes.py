@@ -4,7 +4,7 @@ import pandas as pd
 import psycopg2
 from psycopg2.extras import execute_values
 
-# Cargo variables de entorno desde docker-compose
+# Cargo variables de entorno
 DB = os.getenv("POSTGRES_DB")
 USER = os.getenv("POSTGRES_USER")
 PASSWORD = os.getenv("POSTGRES_PASSWORD")
